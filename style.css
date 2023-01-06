@@ -1,0 +1,133 @@
+/* Variables */
+/* Template */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 10px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Styles */
+.animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #f6e8d7 0%, #dabe9b 100%);
+}
+
+.boots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: fade-in 2s ease-in;
+  animation: fade-in 2s ease-in;
+}
+
+.floor {
+  background: #232323;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+}
+
+.boot {
+  width: 38%;
+  height: 32%;
+  background: url("https://100dayscss.com/codepen/doc-martens.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center bottom;
+  position: absolute;
+  bottom: 40%;
+  -webkit-animation: walk 2s ease-in-out infinite;
+  animation: walk 2s ease-in-out infinite;
+}
+
+.boot-left {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  bottom: 41%;
+  left: 50%;
+  transform: rotate(-20deg);
+}
+
+/* Animations */
+@-webkit-keyframes walk {
+  from, to {
+    bottom: 41%;
+    left: 50%;
+    transform: rotate(-20deg);
+  }
+  25% {
+    bottom: 39%;
+    transform: rotate(5deg);
+  }
+  50% {
+    bottom: 45%;
+    left: 10%;
+    transform: rotate(40deg);
+  }
+  75% {
+    bottom: 45%;
+  }
+}
+@keyframes walk {
+  from, to {
+    bottom: 41%;
+    left: 50%;
+    transform: rotate(-20deg);
+  }
+  25% {
+    bottom: 39%;
+    transform: rotate(5deg);
+  }
+  50% {
+    bottom: 45%;
+    left: 10%;
+    transform: rotate(40deg);
+  }
+  75% {
+    bottom: 45%;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Media Queries */
+@media (max-width: 399px) {
+  .frame {
+    width: 96%;
+    margin-left: -48%;
+  }
+}
